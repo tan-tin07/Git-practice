@@ -22,6 +22,9 @@ def add_todo(task):
         → todo_list에 {"task": "파이썬 공부하기", "done": False} 추가
         → '파이썬 공부하기'이(가) 추가되었습니다. 출력
     """
+    new_todo = {"task": task, "done": False}
+    todo_list.append(new_todo)
+    print(f"'{task}'이(가) 추가되었습니다.")
     # TODO: todo_list에 새 항목을 딕셔너리로 추가하세요
     # TODO: 추가 완료 메시지를 출력하세요
     pass
