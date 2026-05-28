@@ -1,4 +1,5 @@
-grades.py
+```python
+# grades.py
 
 SUBJECTS = ["국어", "영어", "수학", "과탐"]
 
@@ -26,3 +27,57 @@ def get_scores():
 if __name__ == "__main__":
     scores = get_scores()
     print("\n입력된 점수:", scores)
+```
+
+
+```python
+def calculate_average(scores):
+    """점수 딕셔너리를 받아 평균을 반환한다."""
+    if not scores:
+        return 0.0
+    return sum(scores.values()) / len(scores)
+```
+
+`if __name__` 블록도 아래와 같이 수정하세요.
+
+```python
+if __name__ == "__main__":
+    scores = get_scores()
+    print("\n입력된 점수:", scores)
+
+    average = calculate_average(scores)
+    print(f"평균 점수: {average:.1f}점")
+```
+
+```python
+def print_result(scores, average):
+    """점수와 평균을 보기 좋게 출력한다."""
+    print("\n" + "=" * 30)
+    print("       성적 결과")
+    print("=" * 30)
+    for subject in SUBJECTS:
+        print(f"  {subject:<10} {scores[subject]:>6.1f}점")
+    print("-" * 30)
+    print(f"  {'평균':<10} {average:>6.1f}점")
+    print("=" * 30)
+
+
+def find_highest_lowest(scores):
+    """최고점과 최저점 과목을 반환한다."""
+    highest = max(SUBJECTS, key=lambda s: scores[s])
+    lowest  = min(SUBJECTS, key=lambda s: scores[s])
+    return highest, lowest
+```
+
+`if __name__` 블록을 최종본으로 업데이트하세요.
+
+```python
+if __name__ == "__main__":
+    scores = get_scores()
+    average = calculate_average(scores)
+    print_result(scores, average)
+
+    highest, lowest = find_highest_lowest(scores)
+    print(f"\n최고점: {highest} ({scores[highest]:.1f}점)")
+    print(f"최저점: {lowest} ({scores[lowest]:.1f}점)")
+```
