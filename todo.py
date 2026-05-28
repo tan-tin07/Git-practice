@@ -103,6 +103,10 @@ def count_todos():
     # TODO: 완료된 항목 수를 계산하세요
     #       힌트: item["done"]이 True인 항목의 수를 세어보세요
     done = 0
+    for item in todo_list:
+        if item["done"]:
+            done += 1
+
     return total, done
 
 
