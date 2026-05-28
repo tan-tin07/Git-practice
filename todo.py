@@ -54,6 +54,11 @@ def show_todos():
     for i, item in enumerate(todo_list, 1):
         # TODO: 완료 여부에 따라 status를 "✓" 또는 " "로 설정하세요
         # TODO: 번호, status, 할 일 내용을 형식에 맞게 출력하세요
+        if item["done"]:
+            status = "✓"
+        else:
+            status = " "
+        print(f"  {i}. [{status}] {item['task']}")
         pass
 
     print("=" * 30)
