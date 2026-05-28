@@ -77,10 +77,15 @@ def complete_todo(index):
     """
     # TODO: index가 유효한 범위인지 확인하고
     #       범위를 벗어나면 안내 메시지 출력 후 return하세요
+    if index < 1 or index > len(todo_list):
+        print("올바르지 않은 번호입니다.")
+        return
 
     # TODO: 해당 항목의 "done" 값을 True로 변경하세요
+    todo_list[index - 1]["done"] = True
 
     # TODO: 완료 메시지를 출력하세요
+    print(f"'{todo_list[index - 1]['task']}' 항목이 완료 처리되었습니다.")
     pass
 
 
