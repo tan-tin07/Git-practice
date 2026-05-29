@@ -1,7 +1,7 @@
 ```python
 # grades.py
-
-SUBJECTS = ["국어", "영어", "수학", "과탐"]
+# gradebook v1.1 — 2주차 실습 시작
+SUBJECTS = ["국어", "영어", "수학", "과학탐구"]
 
 
 def get_scores():
